@@ -17,8 +17,9 @@ fn test_println() {
 
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    test_main();
+    rust_os::init();
 
+    test_main();
     loop {}
 }
 
