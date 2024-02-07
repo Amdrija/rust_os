@@ -8,7 +8,7 @@
 
 use core::panic::PanicInfo;
 
-use rust_os::println;
+use rust_os::{hlt_loop, println};
 
 #[test_case]
 fn test_println() {
@@ -20,7 +20,7 @@ pub extern "C" fn _start() -> ! {
     rust_os::init();
 
     test_main();
-    loop {}
+    hlt_loop()
 }
 
 #[panic_handler]
